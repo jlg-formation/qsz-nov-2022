@@ -26,6 +26,7 @@ export const getBubbles = async () => {
 };
 
 export const listenForEvents = async () => {
+  await client.configSet("notify-keyspace-events", "g$xE");
   const subscriber = client.duplicate();
 
   await subscriber.connect();
@@ -36,5 +37,6 @@ export const listenForEvents = async () => {
     }
     console.log("channel: ", channel);
     console.log("message: ", message);
+    ws.broadcast(str);
   });
 };
