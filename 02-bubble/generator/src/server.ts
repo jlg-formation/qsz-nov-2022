@@ -1,4 +1,5 @@
 import { createClient } from "redis";
+import { insertForm } from "./redis";
 
 (async () => {
   try {
@@ -8,8 +9,7 @@ import { createClient } from "redis";
 
     await client.connect();
 
-    await client.set("key", "value");
-    const value = await client.get("key");
+    await insertForm(client);
     await client.disconnect();
   } catch (err) {
     console.log("err: ", err);
