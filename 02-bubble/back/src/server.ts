@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import serveIndex from "serve-index";
 import { api } from "./api";
@@ -11,6 +12,8 @@ import { client } from "./redis";
     const port = 3000;
 
     const app = express();
+
+    app.use(cors());
 
     app.use("/api", api);
 
