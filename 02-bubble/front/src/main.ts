@@ -1,5 +1,5 @@
 import { getBubbles } from "./bubbles";
-import "./style.css";
+import "./style.scss";
 import { makeSvgFromBubbles } from "./svg";
 
 const app = document.querySelector<HTMLDivElement>("#app");
@@ -10,5 +10,6 @@ if (app === null) {
 setInterval(async () => {
   const bubbles = await getBubbles();
   const svg = makeSvgFromBubbles(bubbles);
-  app.innerHTML = svg;
-}, 1000);
+  app.innerHTML = "";
+  app.appendChild(svg);
+}, 100);

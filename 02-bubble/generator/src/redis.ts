@@ -14,10 +14,10 @@ export const insertRandomForm = async (client: RedisClientType) => {
   const form: Form = {
     type: "circle",
     data: {
-      cx: random(0, 100),
-      cy: random(0, 100),
-      r: random(0, 100),
-      color: `hsla(0, 100%, 50%, ${random(0, 1, 2)})`,
+      cx: random(0, 1000),
+      cy: random(0, 1000),
+      r: random(0, 20),
+      color: `hsla(${random(0, 360)}, 100%, 50%, ${random(0, 1, 2)})`,
     },
   };
   console.log("form: ", form);
