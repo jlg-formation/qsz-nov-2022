@@ -1,5 +1,4 @@
-import { Form } from "./interfaces/Form";
-import { RedisClientType } from "./interfaces/redis-type";
+import type { Form, RedisClientType } from "@bubble/common";
 import { generateId, random } from "./misc";
 
 export const insertForm = async (client: RedisClientType, form: Form) => {
