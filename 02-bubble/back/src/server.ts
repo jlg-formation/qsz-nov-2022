@@ -2,11 +2,12 @@ import cors from "cors";
 import express from "express";
 import serveIndex from "serve-index";
 import { api } from "./api";
-import { client } from "./redis";
+import { client, listenForEvents } from "./redis";
 
 (async () => {
   try {
     await client.connect();
+    listenForEvents();
 
     const wwwDir = ".";
     const port = 3000;

@@ -11,7 +11,7 @@ import { insertRandomForm } from "./redis";
     await client.connect();
 
     while (true) {
-      await sleep(18);
+      await sleep(1000);
       await insertRandomForm(client);
     }
 

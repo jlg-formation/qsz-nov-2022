@@ -24,3 +24,17 @@ export const getBubbles = async () => {
 
   return bubbles;
 };
+
+export const listenForEvents = async () => {
+  const subscriber = client.duplicate();
+
+  await subscriber.connect();
+  subscriber.pSubscribe("__key*__:*", (message, channel) => {
+    if (channel.match("expire$")) {
+      console.log("filter expire");
+      return;
+    }
+    console.log("channel: ", channel);
+    console.log("message: ", message);
+  });
+};
