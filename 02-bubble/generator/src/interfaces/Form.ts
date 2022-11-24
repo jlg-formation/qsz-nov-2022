@@ -1,6 +1,6 @@
 export interface Form {
-  type: string;
-  data: CircleForm;
+  type: "circle" | "polygon";
+  data: CircleForm | PolygonForm;
 }
 
 export interface CircleForm {
@@ -9,3 +9,5 @@ export interface CircleForm {
   r: number;
   color: string;
 }
+
+export interface PolygonForm {}

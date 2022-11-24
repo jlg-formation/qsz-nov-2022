@@ -1,5 +1,6 @@
 import { createClient } from "redis";
-import { insertForm } from "./redis";
+import { sleep } from "./misc";
+import { insertRandomForm } from "./redis";
 
 (async () => {
   try {
@@ -9,16 +10,12 @@ import { insertForm } from "./redis";
 
     await client.connect();
 
-    await insertForm(client, {
-      type: "circle",
-      data: {
-        cx: 23,
-        cy: 12,
-        r: 45,
-        color: "#eee",
-      },
-    });
-    await client.disconnect();
+    while (true) {
+      await sleep(1000);
+      await insertRandomForm(client);
+    }
+
+    // await client.disconnect();
   } catch (err) {
     console.log("err: ", err);
   }
