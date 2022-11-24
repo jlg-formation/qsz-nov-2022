@@ -7,8 +7,8 @@ export const insertForm = async (client: RedisClientType, form: Form) => {
   const ttl = random(10, 30);
   console.log("ttl: ", ttl);
   await client.setEx(key, ttl, JSON.stringify(form));
-  const value = await client.get(key);
-  console.log("value: ", value);
+  // const value = await client.get(key);
+  // console.log("value: ", value);
 };
 
 export const insertRandomForm = async (client: RedisClientType) => {
