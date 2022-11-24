@@ -37,6 +37,6 @@ export const listenForEvents = async () => {
     }
     console.log("channel: ", channel);
     console.log("message: ", message);
-    ws.broadcast(str);
+    // ws.broadcast(str);
   });
 };
