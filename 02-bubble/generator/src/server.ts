@@ -12,7 +12,7 @@ import { insertForm } from "./redis";
     await insertForm(client, {
       type: "circle",
       data: {
-        cx: 0,
+        cx: 23,
         cy: 12,
         r: 45,
         color: "#eee",
