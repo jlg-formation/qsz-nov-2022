@@ -9,7 +9,15 @@ import { insertForm } from "./redis";
 
     await client.connect();
 
-    await insertForm(client);
+    await insertForm(client, {
+      type: "circle",
+      data: {
+        cx: 0,
+        cy: 12,
+        r: 45,
+        color: "#eee",
+      },
+    });
     await client.disconnect();
   } catch (err) {
     console.log("err: ", err);
