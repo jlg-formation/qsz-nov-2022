@@ -1,7 +1,7 @@
 import type { Form, RedisClientType } from "@bubble/common";
 import { generateId, random } from "./misc";
 
-export const insertForm = async (client: RedisClientType, form: Form) => {
+export const insertForm = (client: RedisClientType, form: Form) => {
   try {
     const key = "bubble:form:" + generateId();
     const ttl = random(10, 30);
