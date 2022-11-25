@@ -1,6 +1,8 @@
 import { createClient } from "redis";
 
-export const client = createClient();
+export const client = createClient({
+  // url: "redis://123.123.123.123:1234",
+});
 
 client.on("error", (err) => console.log("Redis Client Error", err));
 
